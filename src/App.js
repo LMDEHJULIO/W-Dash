@@ -15,7 +15,7 @@ export default class App extends React.Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
-    error: undefined, 
+    error: undefined,
   }
 
   getWeather = async (e) => {
@@ -27,13 +27,29 @@ export default class App extends React.Component {
 
     const data = await api_call.json();
     console.log(data);
+
+    this.setState({
+      temperature: data.main.temp,
+      city: data.name,
+      country: data.sys.country,
+      humidity: data.main.humidity,
+      description: data.weather[0].description,
+      error: ""
+    });
   }
   render () {
     return (
       <div>
         <Titles/>
         <Form getWeather={this.getWeather} />
-        <Weather/>
+        <Weather
+          temperature={this.state.temperature}
+          city={this.state.city}
+          country={this.state.country}
+          humidity={this.state.humidity}
+          description={this.state.description}
+          error={this.state.error}
+          />
       </div>
     );
   }

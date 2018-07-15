@@ -1,13 +1,13 @@
-import React from "react"; 
+import React from "react";
 
 class Weather extends React.Component {
     render() {
         return (
             <div>
-                Weather Component 
-            </div>           
+                {this.props.temperature}
+            </div>
         );
     }
 }
 
-export default Weather; 
+export default Weather;
