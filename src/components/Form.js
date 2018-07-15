@@ -9,9 +9,9 @@ class Form extends React.Component {
                     <input type="text" name="country" placeholder="Country..."/>
                     <button>Get Weather</button>
                 </form>
-            </div>           
+            </div>
         );
     }
 }
 
-export default Form; 
+export default Form;
